@@ -35,4 +35,5 @@ Create a small Google Colab notebook named `support_ticket_router.ipynb` that im
 
 ## Revision tracking
 
-This specification reflects the assignment, the approved implementation plan, and the later user clarifications. It documents the implementation requirements; it is not an exact transcript of the prompts exchanged in the conversation. Record any future changes to the implementation requirements here.
+- Initial model: `gpt-6-luna`. During Google Colab testing, the API returned an error because this model does not support `temperature=0`.
+- Changed the model to `gpt-4o-mini`, keeping `temperature=0` and leaving the rest of the implementation unchanged.
