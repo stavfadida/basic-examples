@@ -10,7 +10,7 @@ Create a small Google Colab notebook named `support_ticket_router.ipynb` that im
 
 ### Model and credentials
 - Install `langgraph` and `langchain-openai` in the notebook with `!pip -q install langgraph langchain-openai`.
-- Use `ChatOpenAI` with model ID `gpt-6-luna` and `temperature=0`. Keep the model ID in one `MODEL_NAME` constant. GPT-6 Luna is selected because it is an efficient low-cost model appropriate for choosing among three support categories; current official pricing lists it at $0.10 per million input tokens and $0.50 per million output tokens for standard short-context usage.
+- Use `ChatOpenAI` with model ID `gpt-4o-mini` and `temperature=0`. Keep the model ID in one `MODEL_NAME` constant. GPT-4o mini is selected because it is a fast, affordable small model for focused tasks and supports Structured Outputs. Its current standard pricing is $0.15 per million input tokens and $0.60 per million output tokens. The Chat Completions API accepts temperature values from 0 to 2 for this model, so the required `temperature=0` works. OpenAI currently lists `gpt-4o-mini` as deprecated with a scheduled shutdown date of January 14, 2027; it remains available for this initial Colab test.
 - Load the key only from Colab Secrets: `from google.colab import userdata` then `os.environ["OPENAI_API_KEY"] = userdata.get("OPENAI_API_KEY")`. Never hard-code, request, print, or expose the key in notebook output.
 
 ### State and classification
